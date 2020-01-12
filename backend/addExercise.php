@@ -12,15 +12,16 @@
   // declaration of global variables
   $response = [];
 
-  if(isset($_REQUEST['session_id'])&&isset($_REQUEST['question'])&&isset($_REQUEST['answer_1'])&&isset($_REQUEST['answer_2'])&&isset($_REQUEST['answer_3'])&&isset($_REQUEST['answer_4'])){
-    $session_id = $_REQUEST['session_id'];
-    $question = $_REQUEST['question'];
-    $answer1 = $_REQUEST['answer_1'];
-    $answer2 = $_REQUEST['answer_2'];
-    $answer3 = $_REQUEST['answer_3'];
-    $answer4 = $_REQUEST['answer_4'];
+  if(isset($_REQUEST['session_id'])&&issset($_REQUEST['params'])){
 
-    $exercise = new Exercise($question, $answer1, $answer2, $answer3, $answer4);
+    $session_id = $_REQUEST['session_id'];
+    $exercises = json_decode($_REQUEST['params']);
+
+    for ($i in $exercises){
+      $exercise = new Exercise($question, $answer1, $answer2, $answer3, $answer4);
+
+    }
+
 
 
 

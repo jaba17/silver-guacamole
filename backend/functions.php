@@ -18,9 +18,15 @@ function writeToFile($file_path, $text_to_write){
 
 function readFromFile($file_path){
 
-  $f_open = fopen("./../".$file_path, "r") or die("error");
-  return fread($f_open, filesize("./../".$file_path));
-  fclose($f_open);
+  try{
+
+    $f_open = fopen("./../".$file_path, "r");
+    return fread($f_open, filesize("./../".$file_path));
+    fclose($f_open);
+
+  } catch (Exception $e) {
+    return "file does not exist";
+  }
 
 }
 ?>

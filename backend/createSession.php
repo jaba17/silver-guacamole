@@ -16,6 +16,7 @@
 
   // create session id
   $id = createSessionID();
+  $response['session_id'] = $id;
   createSession($id);
 
   echo json_encode($response);
