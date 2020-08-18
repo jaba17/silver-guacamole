@@ -12,7 +12,7 @@
   // declaration of global variables
   $response = [];
 
-  if(isset($_REQUEST['session_id'])&&issset($_REQUEST['params'])){
+  if(isset($_REQUEST['session_id'])&&isset($_REQUEST['params'])){
 
     $session_id = $_REQUEST['session_id'];
     $exercises = json_decode($_REQUEST['params']);
